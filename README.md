@@ -1,6 +1,3 @@
-# samples
-samples of some tech.
-
 ## hdfs-sample
 #### Dependencies
 * jetty-server-8.1.8
