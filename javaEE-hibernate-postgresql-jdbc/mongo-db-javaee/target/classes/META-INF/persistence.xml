@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+    <persistence-unit name="mongo">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!--JNDI result of wildfly management console-->
+        <jta-data-source>java:/testDS</jta-data-source>
+
+        <!-- test -->
+        <class>sql.dal.entities.Student</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <!--<property name="hibernate.hbm2ddl.auto" value="update"/>-->
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>
