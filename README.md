@@ -23,3 +23,10 @@ simple java servlet for beginners
 ## kafka-test
 * kafka_2.12 dependency
 * Contains three Main classes,`SimpleProducer`, `SimpleConsumer` and `ConsumerGroup` 
+
+## jms-test
+* ./standalone.sh -c standalone-full.xml -b 0.0.0.0
+* ./jboss-cli.sh 
+* connect
+* jms-queue add --queue-address=TestQueue --entries=queue/test
+* jms-topic add --topic-address=TestTopic --entries=topic/test
