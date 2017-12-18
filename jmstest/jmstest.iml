@@ -39,5 +39,6 @@
     <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.7.7.jbossorg-1" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.7.jbossorg-1" level="project" />
     <orderEntry type="library" name="Maven: org.wildfly.checkstyle:wildfly-checkstyle-config:1.0.4.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.activemq:activemq-all:5.15.2" level="project" />
   </component>
 </module>
