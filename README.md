@@ -30,3 +30,7 @@ simple java servlet for beginners
 * connect
 * jms-queue add --queue-address=TestQueue --entries=queue/test
 * jms-topic add --topic-address=TestTopic --entries=topic/test
+## activemq-test
+* download latest version of activeMQ from http://activemq.apache.org/download.html
+* extract it and run from bin sub-dir by command `./activemq start` and stop it using `./activemq stop` 
+* change config by editting conf/activemq.xml
