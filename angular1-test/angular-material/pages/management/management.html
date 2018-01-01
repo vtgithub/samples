@@ -1,0 +1,14 @@
+<div ng-controller="managementController">
+    <h1>{{welcomMessage}}</h1>
+    <button  ng-click="setManagementContent('management/category/categoryContent.html')">
+    	category</button>
+    <button  ng-click="setManagementContent('management/timePeriod/timePeriodContent.html')">
+    	time period</button>
+    <button  ng-click="setManagementContent('management/package/packageContent.html')">
+    	package</button>
+    <button  ng-click="setManagementContent('management/package/packageShow.html')">
+        package show</button>
+
+    <div ng-include="managementContent"></div>
+    <br/>
+</div>

@@ -1,0 +1,39 @@
+<div ng-controller="packageShowController">
+
+    <h3>package</h3>
+
+    <div>
+        <table>
+            <tr>
+                <th></th>
+                <th>cat name</th>
+            </tr>
+            <tr ng-repeat="cat in allCatList[parentCounter]">
+                <td>{{$index + 1}}</td>
+                <td><a ng-click="updateCatList(cat)">{{cat.name}}</a></td>
+            </tr>
+
+        </table>
+        <button ng-click="previousCat()">back</button>
+
+    </div>
+
+    <br/>
+
+    <button ng-click="submit()">submit</button>
+    <hr/>
+    <table ng-show="packageList.length">
+        <tr>
+            <th>index</th>
+            <th>name</th>
+            <th>category</th>
+            <th>price</th>
+        </tr>
+        <tr ng-repeat="package in packageList">
+            <td>{{$index + 1}}</td>
+            <td>{{package.name}}</td>
+            <td>{{getCatName(package.categoryId)}}</td>
+            <td>{{package.price}}</td>
+        </tr>
+    </table>
+</div>

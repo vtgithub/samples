@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="mainApp">
+<head>
+    <meta charset="UTF-8">
+    <title>factory devices co.</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    <!--<link rel="stylesheet" type="text/css" href="../p/styles/main.css">-->
+    <link rel="stylesheet" type="text/css" href="../resources/styles/angular-material.css">
+
+    <script type="text/javascript" src="../scripts/lib/angular.min.js"></script>
+    <script type="text/javascript" src="../scripts/lib/angular-cookies.min.js"></script>
+    <!--<script type="text/javascript" src="../scripts/lib/angular-resource.min.js"></script>-->
+    <!--<script type="text/javascript" src="../scripts/lib/angular-messages.min.js"></script>-->
+    <!--<script type="text/javascript" src="../scripts/lib/angular-route.min.js"></script>-->
+    <!--<script type="text/javascript" src="../scripts/lib/angular-sanitize.min.js"></script>-->
+    <!--<script type="text/javascript" src="../scripts/lib/angular-base64.js"></script>-->
+    <script type="text/javascript" src="../scripts/lib/angular-material.js"></script>
+
+    <script type="text/javascript" src="../scripts/helpers/cache.js"></script>
+    <!--controllers-->
+    <script type="text/javascript" src="indexController.js"></script>
+    <script type="text/javascript" src="management/managementController.js"></script>
+    <script type="text/javascript" src="management/category/categoryController.js"></script>
+    <script type="text/javascript" src="management/timePeriod/timePeriodController.js"></script>
+    <script type="text/javascript" src="management/package/packageController.js"></script>
+    <script type="text/javascript" src="management/package/packageShowController.js"></script>
+
+
+    <!--services-->
+    <script type="text/javascript" src="management/timeDateHelperService.js"></script>
+    <script type="text/javascript" src="management/category/categoryService.js"></script>
+    <script type="text/javascript" src="management/timePeriod/timePeriodService.js"></script>
+    <script type="text/javascript" src="management/package/packageService.js"></script>
+
+    <!--helpers-->
+    <script type="text/javascript" src="../scripts/helpers/factory-helper.js"></script>
+
+</head>
+<body ng-controller="indexController">
+
+    <div ng-include="mainContent"></div>
+
+</body>
+</html>

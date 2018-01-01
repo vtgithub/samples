@@ -1,0 +1,56 @@
+<div ng-controller="timePeriodContentController">
+
+    <h3>time period</h3>
+    <label>week day:</label>
+    <select ng-model="timePeriodObject.weekDay"
+            ng-change="filterByWeekDay(timePeriodObject.weekDay)"
+    		ng-options="day.id as day.name for day in weekDayList">
+    </select>
+    <br/>
+    
+    <label>from time:</label>
+    <br/>
+    <label>hour</label>
+    <select ng-model="fromTime.hour"
+    		ng-options="hour for hour in hourList">
+    </select>
+	<label>minute</label>
+	<select ng-model="fromTime.minute"
+    		ng-options="minute for minute in minuteList">
+    </select>
+
+    <br/>
+    
+    <label>to time:</label>
+    <br/>
+    <label>hour</label>
+    <select ng-model="toTime.hour"
+    		ng-options="hour for hour in hourList">
+    </select>
+	<label>minute</label>
+	<select ng-model="toTime.minute"
+    		ng-options="minute for minute in minuteList">
+    </select>
+
+
+    <br/>
+    <button ng-click="submit()"> submit </button>
+
+    <br/>
+    <br/>
+
+    <table>
+    	<tr>
+    		<th>index</th>
+    		<th>week day</th>
+    		<th>from time</th>
+    		<th>to time</th>
+    	</tr>
+    	<tr ng-repeat="timePeriod in filteredTimePeriodList">
+    		<td>{{$index+1}}</td>
+    		<td>{{getWeekDay(timePeriod.weekDay)}}</td>
+    		<td>{{getHourMinute(timePeriod.fromTime)}}</td>
+    		<td>{{getHourMinute(timePeriod.toTime)}}</td>
+    	</tr>
+    </table>
+</div>

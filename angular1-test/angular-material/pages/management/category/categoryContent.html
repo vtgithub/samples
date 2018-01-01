@@ -1,0 +1,28 @@
+<div ng-controller="categoryContentController">
+    <h3>category</h3>
+
+    <label>name:</label>
+    <input type="text" name="name" ng-model="category.name"/>
+    <br/>
+    <!-- <label for="parent">parent</label>
+    <input type="text" ng-model="selectedParent" ng-options=""/> -->
+    <br/>
+    <button ng-click="add()"> add </button>
+    <button ng-click="submit()">submit</button>
+    <button ng-click="refresh()">refresh</button>
+    <hr/>
+
+    <table>
+        <tr>
+            <th>index</th>
+            <th>name</th>
+        </tr>
+        <tr ng-repeat="cat in allCatList[parentCounter]">
+            <td>{{$index + 1}}</td>
+            <td><a ng-click="updateCatList(cat)">{{cat.name}}</a></td>
+        </tr>
+
+    </table>
+
+    <button ng-click="previousCat()">back</button>
+</div>
