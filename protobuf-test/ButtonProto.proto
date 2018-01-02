@@ -1,0 +1,52 @@
+syntax = "proto3";
+import "StatusObjectProto.proto";
+import "PackageProto.proto";
+
+message OrdButton{
+	string id = 1;
+  	string name = 2;
+  	string addressId = 3;
+  	repeated StatusObject stateList= 4;
+  	string accountId = 5;
+  	string deviceToken = 6;
+    int32 numOfFuncs = 7;
+    repeated ButtonFunctionalityObject functionalityObjectDtoList = 8;
+}
+
+message ButtonFunctionalityObject{
+    string catId = 1;
+    string catName = 2;
+    int32 funcNumber = 3;
+    Package packageDto = 4;
+}
+
+message OrdButtonList{
+    repeated OrdButton list = 1;
+}
+
+
+
+message ButtonFunctionalityRequest{
+    string deviceToken = 1;
+}
+
+message ButtonFunctionality{
+    map<int32, string> functionalityMap = 1;
+}
+
+message ButtonBuyRequest{
+    string addressId = 1;
+    map<int32, string> buttonFunctionalityMap = 2;
+    string packageId = 3;
+}
+
+message ButtonSetupActivationCodeRequest{
+    map<int32, string> functionalityMap = 1;
+    string deviceToken = 2;
+    string name = 3;
+}
+
+message ButtonSetupActivationCode{
+    string activationCode = 1;
+}
+
