@@ -1,6 +1,5 @@
 syntax = "proto3";
 import "StatusObjectProto.proto";
-import "PackageProto.proto";
 
 message OrdButton{
 	string id = 1;
