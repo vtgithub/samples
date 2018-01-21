@@ -1,1 +1,1 @@
-# spring-boot-cassandra-example
+# spring-boot, spring-data, cassandra + rest-api
