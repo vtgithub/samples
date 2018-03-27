@@ -12,4 +12,5 @@ public interface ActivationRepository extends CrudRepository<ActivationEntity, L
             Boolean isUsed,
             String mobileNumber
     );
+    ActivationEntity findTopByMobileNumberOrdOrderByCreationTimeDesc(String mobileNumber);
 }

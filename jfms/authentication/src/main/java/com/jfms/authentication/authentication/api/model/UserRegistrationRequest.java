@@ -1,6 +1,6 @@
 package com.jfms.authentication.authentication.api.model;
 
-public class UserRegistration {
+public class UserRegistrationRequest {
     private String mobileNumber;
     private String firstName;
     private String lastName;

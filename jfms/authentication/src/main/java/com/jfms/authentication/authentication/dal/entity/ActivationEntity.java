@@ -13,6 +13,8 @@ public class ActivationEntity {
     @Column(nullable = false)
     private String activationCode;
     @Column
+    private Long creationTime;
+    @Column
     private String mobileNumber;
     @Column(nullable = false)
     private Boolean isUsed= false;
@@ -23,6 +25,7 @@ public class ActivationEntity {
     public ActivationEntity(String activationCode, String mobileNumber) {
         this.activationCode = activationCode;
         this.mobileNumber = mobileNumber;
+        this.creationTime = System.currentTimeMillis();
     }
 
     public Long getId() {
@@ -56,5 +59,14 @@ public class ActivationEntity {
     public void setUsed(Boolean used) {
         isUsed = used;
     }
+
+    public Long getCreationTime() {
+        return creationTime;
+    }
+
+    public void setCreationTime() {
+        this.creationTime = System.currentTimeMillis();
+    }
+
 
 }

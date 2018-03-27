@@ -1,8 +1,8 @@
 package com.jfms.authentication.authentication.service;
 
+import com.jfms.authentication.authentication.api.model.ActivationCodeRequest;
 import com.jfms.authentication.authentication.api.model.UserActivationRequest;
 import com.jfms.authentication.authentication.api.model.UserActivationResponse;
-import com.jfms.authentication.authentication.api.model.UserRegistration;
 import com.jfms.authentication.authentication.dal.entity.ActivationEntity;
 import com.jfms.authentication.authentication.dal.repository.ActivationRepository;
 import com.jfms.authentication.authentication.service.biz.JWT;
@@ -50,5 +50,20 @@ public class ActivationService {
             String jwtToken = jwt.createJWTToken(tokenTtl, null);
             return new UserActivationResponse(jwtToken);
         }
+    }
+
+    public void generateActivationCode(Integer codeLength, String mobileNumber) throws TooRequestException {
+        ActivationEntity activationEntity = null;
+        try {
+            activationEntity = activationRepository.findTopByMobileNumberOrdOrderByCreationTimeDesc(mobileNumber);
+        }catch (Exception e){
+            e.printStackTrace();
+            //todo log
+        }
+        if (activationEntity != null && System.currentTimeMillis() - activationEntity.getCreationTime() > 60000)
+            throw new TooRequestException();
+        String activationCode = randomGenerator.getRandomNumber(codeLength);
+        activationRepository.save(new ActivationEntity(activationCode, mobileNumber));
+        smsService.sendText(mobileNumber, activationCode);
     }
 }
