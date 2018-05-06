@@ -45,7 +45,7 @@ public class SimpleProducer{
             final int finalI = i;
             producer.send(
                     new ProducerRecord<String, String>(
-                            topicName,
+                            topicName+i,
                             0,
                             Integer.toString(i),
                             Integer.toString(i)

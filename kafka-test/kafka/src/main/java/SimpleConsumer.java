@@ -41,7 +41,16 @@ public class SimpleConsumer {
         System.out.println("Subscribed to topic " + topicName);
         int i = 0;
 
-        while (true) {
+//        while (true) {
+//            ConsumerRecords<String, String> records = consumer.poll(100);
+//            for (ConsumerRecord<String, String> record : records)
+//
+//                // print the offset,key and value for the consumer records.
+//                System.out.printf("time=%s, offset = %d, key = %s, value = %s\n",
+//                        new Date(record.timestamp()).toString(), record.offset(), record.key(), record.value());
+//        }
+        for (int j = 0; j < 10; j++) {
+            consumer.subscribe(Arrays.asList(topicName+j));
             ConsumerRecords<String, String> records = consumer.poll(100);
             for (ConsumerRecord<String, String> record : records)
 
@@ -49,5 +58,6 @@ public class SimpleConsumer {
                 System.out.printf("time=%s, offset = %d, key = %s, value = %s\n",
                         new Date(record.timestamp()).toString(), record.offset(), record.key(), record.value());
         }
+
     }
 }
