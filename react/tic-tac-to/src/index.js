@@ -58,6 +58,8 @@ class Board extends React.Component {
 
 class Game extends React.Component {
     render() {
+        var ajx = new AjaxTest();
+        ajx.getIpData();
         return (
             React.createElement('div', {className:'game'},
                 React.createElement('div', {className:'game-board'}, <Board />),
@@ -70,9 +72,26 @@ class Game extends React.Component {
     }
 }
 
+class AjaxTest {
+    getIpData(){
+        fetch("https://ipapi.co/5.53.63.200/json/")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    console.log(result);
+                    // alert(result);
+                    // this.setData({d:result.region});
+                },
+                (error) => {
+                    alert("error");
+                }
+            )
+    }
+}
+
 // ========================================
 
 ReactDOM.render(
-    <Game />,
+    <Game/>,
     document.getElementById('root')
 );
