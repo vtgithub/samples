@@ -60,8 +60,6 @@ class RegistrationFormMaterial extends Component{
 
     handleClick(){
         this.service.postInfo(this.state);
-        // this.setState({open:true});
-        console.log(this.state.info)
 
     }
 
