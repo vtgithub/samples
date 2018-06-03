@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import RegistrationForm from './RegistrationForm';
+import RegistrationFormMaterial from './RegistrationFormMaterial'
 
 class App extends Component {
   render() {
@@ -14,7 +15,8 @@ class App extends Component {
         <p className="App-intro">
           Test Form
         </p>
-        <RegistrationForm/>
+        {/*<RegistrationForm/>*/}
+        <RegistrationFormMaterial/>
       </div>
 
     );
