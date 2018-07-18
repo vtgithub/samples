@@ -22,7 +22,7 @@ class MessengerMaterial extends Component{
             {title:"title2", description:"description2", id:"user2"},
             {title:"title3", description:"description3", id:"user3"},
         ]};
-        // this.onlineMessageService.getRosterList ("test", (rosterList) => {
+        // this.onlineMessageService.getRos terList ("test", (rosterList) => {
         //     this.setState({Roster:rosterList});
         // });
 
