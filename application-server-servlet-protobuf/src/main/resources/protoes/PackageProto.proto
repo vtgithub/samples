@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+message Package{
+	string id = 1;
+  	string name = 2;
+	map<string, int32> products = 3;
+  	double price = 4;
+  	string categoryId = 5;
+    string description = 6;
+}
+
+message PackageRequest{
+	string name = 1;
+	map<string, int32> products = 2;
+	double price = 3;
+	string categoryId = 4;
+	string description = 5;
+}
+
+
+message PackageList{
+    repeated Package list = 1;
+}

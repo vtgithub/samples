@@ -1,0 +1,31 @@
+syntax = "proto3";
+import "AddressProto.proto";
+import "ButtonProto.proto";
+
+
+message AppSource{
+	string appVersion = 1;
+	string appVersionCode = 2;
+	int32 devicePlatform = 3;
+	string deviceSDK = 4;
+	string deviceName = 5;
+	string page = 6;
+	OrdLocation location = 7;
+}
+
+message WebSource{
+	string url = 1;
+	string ip = 2;
+	int64 time = 3;
+	OrdLocation location = 4;
+}
+
+message ButtonSource{
+	string buttonVersion = 1;
+	string ip = 2;
+	string funcKey = 3;
+	OrdButton ordButton = 4;
+}
+
+
+

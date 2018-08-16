@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="deployment-war">
+    <output-path>/opt/git/wars</output-path>
+    <root id="archive" name="deployment-war.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="deployment" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="deployment/web/Web" />
+    </root>
+  </artifact>
+</component>

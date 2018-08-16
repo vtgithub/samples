@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message Message{
+    int64 startTime = 1;
+    int64 endTime = 2;
+    string note = 3;
+}
+
+message MessageList{
+    repeated Message list = 1;
+}

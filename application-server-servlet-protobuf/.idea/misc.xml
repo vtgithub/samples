@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/cronJob/pom.xml" />
+        <option value="$PROJECT_DIR$/notification-center/pom.xml" />
+        <option value="$PROJECT_DIR$/sms/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="UMLDiagramComponent">
+    <diagram name="biz">
+      <command command-class="de.frag.umlplugin.uml.command.AddClassCommand" psi-class="ir.ord.application.biz_layer.biz.AddressBiz" />
+      <compartment-visibility />
+    </diagram>
+  </component>
+</project>

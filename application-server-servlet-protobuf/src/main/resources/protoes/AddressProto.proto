@@ -1,0 +1,33 @@
+syntax = "proto3";
+import "TimePeriodProto.proto";
+
+message AccountAddress{
+	string id = 1;
+	string title = 2;
+	string phone = 3;
+	string street = 4;
+	string alley = 5;
+	string unit = 6;
+	string number = 7;
+	OrdLocation location = 8;
+  	repeated TimePeriod timePeriodDtoList = 9;
+}
+
+message AccountAddressResquest{
+	string title = 1;
+	string phone = 2;
+	string street = 3;
+	string alley = 4;
+	string unit = 5;
+	string number = 6;
+	OrdLocation location = 7;
+}
+
+message OrdLocation{
+	double longitude = 1;
+	double latitude = 2;
+}
+
+message AccountAddressList{
+    repeated AccountAddress list = 1;
+}

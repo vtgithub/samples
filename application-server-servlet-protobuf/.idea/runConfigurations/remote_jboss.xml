@@ -1,0 +1,42 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="remote-jboss" type="JBossConfiguration" factoryName="Remote" APPLICATION_SERVER_NAME="JBoss 10.2.0.Final-local" ALTERNATIVE_JRE_ENABLED="false">
+    <option name="HOST" value="172.22.32.16" />
+    <option name="PORT" value="8180" />
+    <option name="LOCAL" value="false" />
+    <deployment />
+    <server-settings>
+      <data>
+        <option name="managementPort" value="10090" />
+        <option name="password" value="vahid12345" />
+        <option name="serverGroup" value="" />
+        <option name="stagingRemotePath" value="" />
+        <option name="transportHostId" value="" />
+        <option name="transportStagingTarget">
+          <TransportTarget>
+            <option name="id" value="c4117e36-9cb4-4d4d-94fd-d7cdb821c3f5" />
+            <id>c4117e36-9cb4-4d4d-94fd-d7cdb821c3f5</id>
+          </TransportTarget>
+        </option>
+        <option name="username" value="vahid" />
+        <username>vahid</username>
+        <password>vahid12345</password>
+        <management-port>10090</management-port>
+        <server-group />
+        <transport-target>
+          <TransportTarget>
+            <option name="id" value="c4117e36-9cb4-4d4d-94fd-d7cdb821c3f5" />
+            <id>c4117e36-9cb4-4d4d-94fd-d7cdb821c3f5</id>
+          </TransportTarget>
+        </transport-target>
+        <staging-path />
+        <host-id />
+      </data>
+    </server-settings>
+    <predefined_log_file id="JBoss" enabled="true" />
+    <RunnerSettings RunnerId="Debug">
+      <option name="DEBUG_PORT" value="8181" />
+      <option name="LOCAL" value="false" />
+    </RunnerSettings>
+    <method />
+  </configuration>
+</component>

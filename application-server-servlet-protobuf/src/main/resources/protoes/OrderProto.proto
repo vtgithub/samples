@@ -1,0 +1,82 @@
+syntax = "proto3";
+import "StatusObjectProto.proto";
+import "PackageProto.proto";
+import "AddressProto.proto";
+import "SourcesProto.proto";
+import "TimePeriodProto.proto";
+import "ParameterProto.proto";
+
+message Order{
+	string id = 1;
+	repeated DeliveryEstimateObject deliveryEstimateDtoList = 2;
+	DeliveryEstimateObject currentDeliveryEstimate = 3;
+  	int64 demandTime = 4;
+  	repeated StatusObject statusObjectDtoList = 5;
+	StatusObject currentStatus = 6;
+    Package packageDto = 7;
+	int32 sourceType = 8;
+	ButtonSource buttonSourceDto = 9;
+	AppSource appSourceDto =10;
+	WebSource webSourceDto = 11;
+	string deviceToken = 12;
+//	string accountId = 13;
+	AccountAddress addressDto = 13;
+	bool canReschedule = 14;
+	bool canBeCancel = 15;
+	bool canFeedBack = 16;
+	FeedbackObject productFeedBack = 17;
+	FeedbackObject packingFeedBack = 18;
+	FeedbackObject deliveryFeedBack = 19;
+}
+
+message OrderListItem {
+	 string id = 1;
+	 DeliveryEstimateObject currentDeliveryEstimate = 2;
+	 int64 demandTime = 3;
+	 StatusObject currentStatus = 4;
+	 string packageName = 5;
+	 double packagePrice = 6;
+     int32 sourceType = 7;
+	 string sourceName = 8;
+     string sourceId = 9;
+//	 string deviceToken = 10;
+     string addressTitle = 10;
+	 string addressId = 11;
+
+}
+
+message DeliveryEstimateObject{
+	int32 actor = 1;
+	int64 timeStamp = 2;
+	int64 deliveryTimeMin = 3;
+	int64 deliveryTimeMax = 4;
+}
+
+message OrderList{
+    repeated OrderListItem list = 1;
+}
+
+message OrderChangeTimeRequest{
+	TimePeriod deliveryTimePeriod = 1;
+	ComboElement rescheduleReason = 2;
+}
+
+message OrderCancelRequest{
+	ComboElement cancelReason = 1;
+}
+
+message OrderNeededAmount{
+	double neededAmount = 1;
+}
+
+message OrderFeedback{
+	FeedbackObject productFeedback = 1;
+	FeedbackObject packingFeedback = 2;
+	FeedbackObject deliveryFeedback = 3;
+}
+
+message OrderComboElemets{
+	repeated ComboElement productComboElementList = 1;
+	repeated ComboElement deliveryComboElementList = 2;
+	repeated ComboElement packingComboElementList = 3;
+}

@@ -1,0 +1,14 @@
+db.AccountInfoEntity.createIndex({"phoneNumber":1});
+db.ActivationEntity.createIndex({"activationCode":1, "deviceId":1});
+db.BankPaymentEntity.createIndex({"orderId":1});
+db.ButtonActivationEntity.createIndex({"deviceToken":1, "activationCode":1});
+db.ButtonEntity.createIndex({"accountId":1}); //TODO _---------------------
+db.ButtonEntity.createIndex({"deviceToken":1});
+db.CreditEntity.createIndex({"accountId":1});
+db.GiftEntity.createIndex({"code":1, "accountId":1, "usedTime":1});
+db.OrderEntity.createIndex({"accountId":1});
+db.PackageEntity.createIndex({"categoryId":1});
+db.QREntity.createIndex({"sessionId":1,"creationTime":1});
+db.QREntity.createIndex({"encryptedCode":1,"creationTime":1});
+db.SessionInfoEntity.createIndex({"accountId":1, "deviceId":1});
+db.UnpaiedEntity.createIndex({"accountId":1});

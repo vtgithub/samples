@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message StatusObject{
+	int64 timeStamp = 1;
+    int32 state = 2;
+    string description = 3;
+    int32 actor = 4;
+}
+

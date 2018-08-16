@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+message Credit{
+	string id = 1;
+	double amount = 2;
+  	int64 payDate = 3;
+  	string orderId = 4;
+	BankInfo bankInfoDto =5;
+	string description = 6;
+	double balance = 7;
+	int32 payType = 8;
+
+}
+
+message BankInfo{
+	string token =1;
+	int32 bankId =2;
+}
+message CreditList{
+	repeated Credit list = 1;
+}

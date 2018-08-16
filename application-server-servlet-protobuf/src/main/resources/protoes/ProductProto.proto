@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+message ProductRequest{
+	string catId = 1;
+}
+
+message QuantityObject{
+    int32 unit = 1;
+    int32 value = 2;
+}
+
+message NutritionFactObject{
+    QuantityObject energy = 1;
+    QuantityObject totalFat = 2;
+    QuantityObject carbohydrate = 3;
+    QuantityObject sugar = 4;
+    QuantityObject protein = 5;
+    QuantityObject saturatedFattyAcids = 6;
+    QuantityObject transeFattyAcids = 7;
+    QuantityObject salt = 8;
+    repeated QuantityObject extraFields = 9;
+}
+message Product{
+    map<string, string> barcodeMap = 1;
+    map<string, string> extraInfoMap = 2;
+    NutritionFactObject nutritionFact = 3;
+    QuantityObject quantity = 4;
+    string importer = 5;
+    string name = 6;
+    string description = 7;
+    string imageUrl = 8;
+    string catId = 9;
+    int32 expirationDurationDate = 10;
+    bool organic = 11;
+    bool gmoFree = 12;
+    string packingType = 13;
+    int32 price = 14;
+}
+
+message ProductList{
+    repeated Product list = 1;
+}
+
+
+
+

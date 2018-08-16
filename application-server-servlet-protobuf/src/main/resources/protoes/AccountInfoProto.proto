@@ -1,0 +1,67 @@
+syntax = "proto3";
+import "SessionInfoProto.proto";
+
+message AccountInfo{
+	string phoneNumber = 1;
+  	string firstName = 2;
+  	string lastName = 3;
+  	double balance = 4;
+  	int32 accountState = 5;
+}
+
+message AccountInfoRequest{
+	string firstName = 1;
+	string lastName = 2;
+}
+
+message AccountInfoList{
+    repeated AccountInfo list = 1;
+}
+
+message AccountSignIn{
+	int32 timeOut = 1;
+}
+
+message AccountSignInRequest{
+	string phoneNumber = 1;
+	string deviceId = 2;
+}
+
+message AccountActivationRequest{
+	string activationCode = 1;
+	string deviceId = 2;
+	SessionInfoRequest sessionInfo = 3;
+}
+
+message AccountActivation{
+	string sessionId = 1;
+}
+
+message AccountPhoneRequest{
+	string phoneNumber = 1;
+}
+
+message AccountPhone{
+	string timeOut = 1;
+}
+
+message AccountPhoneActivateRequest{
+	string activationCode = 1;
+}
+
+message AccountQr{
+	string qrCode = 1;
+	int64 expirationTime = 2;
+}
+
+message AccountSignInQrRequest{
+	string qrCode = 1;
+	string deviceId = 2;
+	SessionInfoRequest sessionInfo = 3;
+}
+
+message AccountSignInQr{
+	string sessionId = 1;
+}
+
+

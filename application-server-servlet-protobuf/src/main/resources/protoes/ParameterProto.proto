@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+message WalletChargeRequest{
+	double amount = 1;
+}
+
+message WalletGiftChargeRequest{
+	string code = 1;
+}
+
+message PaymentInitializeRequest{
+	int64 amount = 1;
+	string specificOrderId = 2;
+}
+
+message PaymentInitialize{
+	string pageUrl = 1;
+	int64 amount = 2;
+}
+
+message ItemCount{
+	int64 count = 1;
+}
+
+message DeviceNotifRequest{
+	string pushToken = 1;
+}
+
+message ComboElement{
+	int32 id = 1;
+	string val = 2;
+}
+
+message ComboElementList{
+	repeated ComboElement list = 1;
+}
+
+
+message FeedbackObject{
+	int32 satisfactionLevel = 1;
+	string opinion = 2;
+	repeated ComboElement comboElementList = 3;
+}
+
+message Empty{
+}
+
+message ListRequest{
+	repeated bytes list = 1;
+}

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+message Notif{
+	string title = 1;
+	string subtitle = 2;
+	string message = 3;
+	repeated string segments = 4;
+	int32 platform = 5;
+}
+
+message ContentUpdateNotif{
+    int32 type = 1;
+	int32 event = 2;
+	int32 priority = 3;
+	string id = 4;
+	repeated string segments = 5;
+	int32 platform = 6;
+}
+
+message SMS{
+	string destinationPhoneNumber = 1;
+	string body = 2;
+}
+
+message Request{
+	int32 type = 1;
+	bytes body = 2;
+}
+

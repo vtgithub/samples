@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+message Category{
+	string _id = 1;
+  	string name = 2;
+  	bytes image = 3;
+  	string imageUrl = 4;
+    repeated Category children = 5;
+}
+
+message CategoryRequest{
+	string _id = 1;
+	string name = 2;
+	bytes image = 3;
+	string imageUrl = 4;
+	repeated CategoryRequest children = 5;
+}
+
+message CategoryList{
+    repeated Category list = 1;
+}

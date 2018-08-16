@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'
+                     debug="true">
+
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d{yyyy-MM-dd HH:mm:ss} %-5p %F:%L- %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="warehouse" class="org.apache.log4j.RollingFileAppender">
+        <param name="append" value="true"/>
+        <param name="maxFileSize" value="1MB"/>
+        <param name="maxBackupIndex" value="10"/>
+        <param name="file" value="/var/log/warehouse-server/warehouse.log"/>
+        <param name="encoding" value="UTF-8" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d{yyyy-MM-dd HH:mm:ss} %-5p %F:%L - %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="warehouseLogger" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="warehouse"/>
+    </logger>
+
+    <root>
+        <level value="INFO" />
+
+        <appender-ref ref="warehouse"/>
+        <!--<appender-ref ref="console"/>-->
+    </root>
+
+</log4j:configuration>

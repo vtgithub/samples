@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+message Gift{
+	string code = 1;
+  	double value = 2;
+  	int64 usedTime = 3;
+  	int64 expirationTime = 4;
+  	bool includeOrExclude = 5;
+    repeated string accountIdList = 6;
+	string userId = 7;
+}
+
+message GiftList{
+    repeated Gift list = 1;
+}
+
+message GiftRequest{
+	double value = 1;
+	int64 expirationTime = 2;
+	bool includeOrExclude = 3;
+	repeated string accountIdList = 4;
+}
+
+message GiftCharge{
+	string chargeCode = 1;
+}

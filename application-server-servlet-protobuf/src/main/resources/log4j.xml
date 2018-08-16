@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration debug="true"
+        xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+            <!--<appender name="console" class="org.apache.log4j.ConsoleAppender">-->
+                <!--<layout class="org.apache.log4j.PatternLayout">-->
+                    <!--<param name="ConversionPattern"-->
+                        <!--value="%d{yyyy-MM-dd HH:mm:ss} %-5p %F:%L- %m%n" />-->
+                <!--</layout>-->
+            <!--</appender>-->
+
+        <appender name="app" class="org.apache.log4j.RollingFileAppender">
+            <!--<param name="append" value="true" />-->
+            <param name="maxFileSize" value="10MB" />
+            <param name="maxBackupIndex" value="10" />
+            <!--<param name="file" value="/opt/server/wildfly-10.1.0.Final/standalone/log/server.log" />-->
+            <param name="file" value="/var/log/application-server/app.log" />
+            <param name="encoding" value="UTF-8" />
+            <layout class="org.apache.log4j.PatternLayout">
+                <param name="ConversionPattern"
+                  value="%d{yyyy-MM-dd HH:mm:ss} %-5p %F:%L - %m%n" />
+            </layout>
+        </appender>
+        <appender name="button" class="org.apache.log4j.RollingFileAppender">
+            <!--<param name="append" value="true" />-->
+            <param name="maxFileSize" value="10MB" />
+            <param name="maxBackupIndex" value="10" />
+            <!--<param name="file" value="/opt/server/wildfly-10.1.0.Final/standalone/log/server.log" />-->
+            <param name="file" value="/var/log/application-server/button.log" />
+            <param name="encoding" value="UTF-8" />
+            <layout class="org.apache.log4j.PatternLayout">
+                <param name="ConversionPattern"
+                     value="%d{yyyy-MM-dd HH:mm:ss} %-5p %F:%L - %m%n" />
+            </layout>
+        </appender>
+
+        <!--<plugin name="XMLSocketReceiver" class="org.apache.log4j.net.XMLSocketReceiver">-->
+        <!--<param name="decoder" value="org.apache.log4j.xml.UtilLoggingXMLDecoder"/>-->
+        <!--<param name="Port" value="2222"/>-->
+        <!--</plugin>-->
+
+        <logger name="buttonLogger" additivity="false">
+            <level value="INFO"/>
+            <!--<appender-ref ref="logstash-appernder"/>-->
+            <appender-ref ref="button"/>
+            <!--<appender-ref ref="SOCKET"/>-->
+        </logger>
+
+        <logger name="appLogger" additivity="false">
+            <level value="INFO"/>
+            <!--<appender-ref ref="logstash-appernder"/>-->
+            <appender-ref ref="app"/>
+            <!--<appender-ref ref="SOCKET"/>-->
+        </logger>
+
+        <root>
+            <level value="INFO" />
+            <!--<priority value="all"></priority>-->
+            <!--<appender-ref ref="logstash-appender"/>-->
+            <!--<appender-ref ref="SOCKET"/>-->
+            <appender-ref ref="app"/>
+            <appender-ref ref="button" />
+            <!--<appender-ref ref="console" />-->
+        </root>
+
+</log4j:configuration>
+
+
+
+
+
+
+        <!--<?xml version="1.0" encoding="UTF-8"?>-->
+        <!--<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">-->
+<!--<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">-->
+<!--&lt;!&ndash;-->
+        <!--appender CONSOLE-->
+<!--&ndash;&gt;-->
+<!--<appender name="console-appender" class="org.apache.log4j.ConsoleAppender">-->
+    <!--<param name="encoding" value="UTF-8"/>-->
+    <!--<param name="Threshold" value="WARN"/>-->
+<!--</appender>-->
+
+<!--&lt;!&ndash;-->
+        <!--appender LOGSTASH-->
+<!--&ndash;&gt;-->
+<!--<appender name="logstash-socket-appernder" class="org.apache.log4j.net.SocketAppender">-->
+
+    <!--&lt;!&ndash;<layout class="org.apache.log4j.PatternLayout">&ndash;&gt;-->
+    <!--&lt;!&ndash;<param name="ConversionPattern"&ndash;&gt;-->
+    <!--&lt;!&ndash;value="%d{yyyy-MM-dd HH:mm:ss} %-5p %F:%L - %m%n" />&ndash;&gt;-->
+    <!--&lt;!&ndash;</layout>&ndash;&gt;-->
+    <!--<param name="RemoteHost" value="127.0.0.1"/>-->
+    <!--<param name="Port" value="9500"/>-->
+    <!--<param name="ReconnectionDelay" value="60000"/>-->
+    <!--<param name="Threshold" value="INFO"/>-->
+    <!--&lt;!&ndash;<param name="LocationInfo" value="true"/>&ndash;&gt;-->
+<!--</appender>-->
+<!--&lt;!&ndash;-->
+        <!--logger LOGSTASH-->
+<!--&ndash;&gt;-->
+<!--<logger name="appLogger">-->
+    <!--<level value="info"/>-->
+    <!--<appender-ref ref="logstash-socket-appernder"/>-->
+<!--</logger>-->
+<!--&lt;!&ndash;-->
+        <!--default root logger-->
+<!--&ndash;&gt;-->
+<!--<root>-->
+    <!--<level value="warn"/>-->
+    <!--<appender-ref ref="console-appender"/>-->
+<!--</root>-->
+
+<!--</log4j:configuration>-->

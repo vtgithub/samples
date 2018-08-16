@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "TimePeriodProto.proto";
+
+message TimePeriodObject{
+	int64 timeStamp = 1;
+	TimePeriod timePeriodDto = 2;
+	string description = 3;
+	string actor = 4;
+	int64 date = 5;
+}
+
+message TimePeriodObjectList{
+    repeated TimePeriodObject list = 1;
+}

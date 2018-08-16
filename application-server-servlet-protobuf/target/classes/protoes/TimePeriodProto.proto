@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+message TimePeriod{
+	string id = 1;
+  	int32 weekDay = 2;
+  	int32 fromTime = 3;
+  	int32 toTime = 4;
+	int64 baseTime = 5;
+}
+
+message CustomTimePeriodRequest{
+	int64 baseTime = 1;
+	int32 futureDays = 2;
+}
+message TimePeriodRequest{
+	string id = 1;
+	int32 weekDay = 2;
+	int32 fromTime = 3;
+	int32 toTime = 4;
+}
+
+message TimePeriodFillRequest{
+	int32 from = 1;
+	int32 to = 2;
+	int32 period = 3;
+}
+
+message TimePeriodList{
+    repeated TimePeriod list = 1;
+}
+
+message TimePeriodListRequest{
+	repeated TimePeriodRequest list = 1;
+}
+

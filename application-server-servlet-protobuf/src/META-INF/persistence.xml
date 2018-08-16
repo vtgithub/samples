@@ -1,0 +1,32 @@
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <persistence-unit name="application-server-ogm" transaction-type="JTA">
+        <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+
+        <class>ir.ord.application.dal.entities.ActivationEntity</class>
+        <class>ir.ord.application.dal.entities.AccountInfoEntity</class>
+        <class>ir.ord.application.dal.entities.TimePeriodEntity</class>
+        <class>ir.ord.application.dal.entities.SessionInfoEntity</class>
+        <class>ir.ord.application.dal.entities.ButtonActivationEntity</class>
+        <class>ir.ord.application.dal.entities.ButtonEntity</class>
+        <class>ir.ord.application.dal.entities.CategoryEntity</class>
+        <class>ir.ord.application.dal.entities.CreditEntity</class>
+        <class>ir.ord.application.dal.entities.GiftEntity</class>
+        <class>ir.ord.application.dal.entities.PackageEntity</class>
+        <class>ir.ord.application.dal.entities.OrderEntity</class>
+
+
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform"/>
+            <property name="hibernate.ogm.datastore.database" value="ord"/>
+            <property name="hibernate.ogm.datastore.host" value="localhost"/>
+            <property name="hibernate.ogm.datastore.provider" value="MONGODB"/>
+            <property name="hibernate.ogm.datastore.create_database" value="true"/>
+            <!-- Just in case your DB needs user/name password
+                  <property name="hibernate.ogm.datastore.username" value="db_user" />
+                  <property name="hibernate.ogm.datastore.password" value="top_secret!" />
+             -->
+        </properties>
+    </persistence-unit>
+</persistence>

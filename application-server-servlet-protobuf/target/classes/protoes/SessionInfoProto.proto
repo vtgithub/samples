@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+message SessionInfo{
+//    string deviceId = 1;
+//    string accountId = 2;
+    int32 platform = 1;
+    string platformVersion =2;
+    string appVersion = 3;
+    int64 activationTime = 4;
+    int64 lastActivity = 5;
+    string deviceName = 6;
+    string deviceModel = 7;
+    string secondaryId = 8;
+    bool active = 9;
+    string ip = 10;
+}
+
+message SessionInfoRequest{
+    int32 platform = 1;
+    string platformVersion =2;
+    string appVersion = 3;
+    string deviceName = 4;
+    string deviceModel = 5;
+}
+
+message SessionDeactivateRequest{
+    string secondaryId = 1;
+}
+
+message SessionListDeactivateRequest{
+    repeated SessionDeactivateRequest list = 1;
+}
+
+message SessionInfoList{
+    repeated SessionInfo list = 1;
+}
