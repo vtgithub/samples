@@ -1,0 +1,32 @@
+#schema {
+#    query: PersonQueries
+#    mutation: PersonMutations
+#}
+
+extend type Query {
+    person(id: Int!): Person
+    personAsync(fname: String!, lname: String!): Person
+}
+
+type Mutation{
+    personSync(fname: String!, lname: String!): Int
+}
+type Person {
+    personInfo: PersonDto
+    bankInfo: BankInfoDto
+}
+type PersonDto {
+     id: Int
+     fName: String
+     lName: String
+}
+
+type BankInfoDto {
+    personId: Int
+    bankId: Int
+    bankName: String
+    bankBranchCode: Int
+    bankBranch: String
+}
+
+
