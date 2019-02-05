@@ -1,0 +1,13 @@
+server:
+  port: 5050
+zuul:
+  routes:
+    graphql:
+      path: "/graphql/**"
+graphql:
+  microList[0]:
+    url: "http://localhost:4041/graphql"
+    schemaFilePath: "C:/Users/v.tavakolpour/Downloads/graphql-schema/schema_micro1.graphql"
+  microList[1]:
+    url: "http://localhost:4042/graphql"
+    schemaFilePath: "C:/Users/v.tavakolpour/Downloads/graphql-schema/schema_micro2.graphql"

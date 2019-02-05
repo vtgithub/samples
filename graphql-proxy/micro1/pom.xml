@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<modules>
+		<module>api</module>
+		<module>impl</module>
+	</modules>
+
+	<properties>
+		<spring.version>2.0.2.RELEASE</spring.version>
+		<java.version>1.8</java.version>
+        <srpingfox.version>2.9.2</srpingfox.version>
+	</properties>
+
+	<groupId>test.icon.graphql.micro1</groupId>
+	<artifactId>micro1</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>micro1</name>
+</project>
