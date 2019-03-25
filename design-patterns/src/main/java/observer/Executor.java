@@ -7,5 +7,7 @@ public class Executor {
         new CustomerClassB(store);
         new CustomerClassC(store);
         store.notifyAllCustomers();
+
+        store.printTestDiscountedValues(100);
     }
 }

@@ -1,5 +1,7 @@
 package facade;
 
+import java.security.cert.CollectionCertStoreParameters;
+import java.util.Collections;
 import java.util.List;
 
 public class TravelInfo {
@@ -11,6 +13,7 @@ public class TravelInfo {
         this.hotels = hotels;
         this.travels = travels;
         this.flights = flights;
+//        Collections.sort();
     }
 
     public List<Hotel> getHotels() {

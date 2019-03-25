@@ -23,4 +23,9 @@ public class Store {
         }
     }
 
+    public void printTestDiscountedValues(int value) {
+        for (Customer customer : customers) {
+            System.out.println(customer.getDiscountedValue(value));
+        }
+    }
 }
