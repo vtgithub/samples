@@ -1,12 +1,12 @@
 package decorator;
 
 public abstract class FootBalPlayerDecorator implements Player{
-    private Player player;
+    protected Player decoratedPlayer;
 //    abstract void setProfesionality(int prof);
 
-    public FootBalPlayerDecorator(Player player) {
+    public FootBalPlayerDecorator(Player decoratedPlayer) {
         super();
-        this.player = player;
+        this.decoratedPlayer = decoratedPlayer;
     }
 
 

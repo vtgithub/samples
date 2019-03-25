@@ -12,6 +12,7 @@ public class FootBallPESPlayer extends FootBalPlayerDecorator {
     }
 
     public void play() {
+        decoratedPlayer.play();
         System.out.println("I am playing in league __"+leagueName+"__ my updateScore is __"+ getScore() );
     }
 
